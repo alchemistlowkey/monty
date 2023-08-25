@@ -58,7 +58,7 @@ typedef struct global_variable
 	FILE *fd;
 } global_var;
 
-extern global_var global;
+extern global_var glob;
 
 void (*opcode_new(char *op_code))(stack_t **stack, unsigned int line_number);
 

@@ -38,4 +38,3 @@ void (*opcode_new(char *op_code))(stack_t **stack, unsigned int line_number)
 	}
 	return (instructions[i].f);
 }
-

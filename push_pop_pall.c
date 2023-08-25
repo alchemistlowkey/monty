@@ -10,16 +10,16 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	int count, i;
 
-	if (!global.args)
+	if (!glob.args)
 	{
 		fprintf(stderr, "L%u: ", line_number);
 		fprintf(stderr, "usage: push integer\n");
 		free_global();
 		exit(EXIT_FAILURE);
 	}
-	for (i = 0; global.args[i] != '\0'; i++)
+	for (i = 0; glob.args[i] != '\0'; i++)
 	{
-		if (!isdigit(global.args[i]) && global.args[i] != '-')
+		if (!isdigit(glob.args[i]) && glob.args[i] != '-')
 		{
 			fprintf(stderr, "L%u: ", line_number);
 			fprintf(stderr, "usage: push integer\n");
@@ -28,9 +28,9 @@ void push(stack_t **stack, unsigned int line_number)
 		}
 	}
 
-	count = atoi(global.args);
+	count = atoi(glob.args);
 
-	if (global.fifo == 1)
+	if (glob.fifo == 1)
 	{
 		add_front(stack, count);
 	}

@@ -1,6 +1,6 @@
 #include "monty.h"
 
-global_var global;
+global_var glob;
 
 /**
  * global_init - initialises the global variables
@@ -9,12 +9,12 @@ global_var global;
  */
 void global_init(FILE *fd)
 {
-	global.fifo = 1;
-	global.current = 1;
-	global.args = NULL;
-	global.buffer = NULL;
-	global.head = NULL;
-	global.fd = fd;
+	glob.fifo = 1;
+	glob.current = 1;
+	glob.args = NULL;
+	glob.buffer = NULL;
+	glob.head = NULL;
+	glob.fd = fd;
 }
 
 /**
@@ -23,7 +23,7 @@ void global_init(FILE *fd)
  */
 void free_global(void)
 {
-	free_list(global.head);
-	free(global.buffer);
-	fclose(global.fd);
+	free_list(glob.head);
+	free(glob.buffer);
+	fclose(glob.fd);
 }
